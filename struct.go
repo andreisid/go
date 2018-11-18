@@ -17,7 +17,7 @@ func (c *car) newTopSpeed(newSpeed float64) {
 	c.topSpeedKmh = newSpeed
 }
 
-func main() {
+func main3() {
 	car1 := car{gasPedal: 223, breakPedal: 0, steringWheel: 221, topSpeedKmh: 200.0}
 	car2 := car{223, 0, 221, 200.0}
 	fmt.Println(car1.gasPedal)
