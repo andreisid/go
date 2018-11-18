@@ -10,7 +10,7 @@ import (
 )
 
 // add all elements of an array
-func add(n []int) int {
+func addTry(n []int) int {
 	sum := 0
 	for _, j := range n {
 		sum += j
@@ -18,14 +18,29 @@ func add(n []int) int {
 	return sum
 }
 
-//
-func test() int {
-	var a, b int = 1, 2
+//variable assign test
+func variableTry() int {
+	a, b := 1, 2
 	return a + b
 }
 
-func main() {
+func pointerTry() {
+	x := 15
+	fmt.Println(&x)
+	fmt.Println(x)
+	a := &x //a is a memory address
+	fmt.Println(a)
+	fmt.Println(*a) //value at that memory addres
+	*a = 5          //value at the address changes
+	fmt.Println(a)
+	fmt.Println(x) //x changed
+	*a = *a * *a   //like x=x*x
+	fmt.Println(x)
+}
+
+func main2() {
 	rand.Seed(time.Now().UTC().UnixNano())
 	fmt.Println("bla ", rand.Intn(9))
-	fmt.Println(add([]int{rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9)}))
+	fmt.Println(addTry([]int{rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9)}))
+	pointerTry()
 }
