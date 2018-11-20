@@ -5,8 +5,7 @@ package main
 import (
 	"fmt"
 	_ "fmt"
-	"math/rand"
-	"time"
+	"runtime"
 )
 
 // add all elements of an array
@@ -38,9 +37,15 @@ func pointerTry() {
 	fmt.Println(x)
 }
 
-func main2() {
-	rand.Seed(time.Now().UTC().UnixNano())
-	fmt.Println("bla ", rand.Intn(9))
-	fmt.Println(addTry([]int{rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9)}))
-	pointerTry()
+func runtimeTry() {
+	fmt.Println(runtime.GOOS)
+	fmt.Println(runtime.Compiler)
+}
+
+func main() {
+	//rand.Seed(time.Now().UTC().UnixNano())
+	//fmt.Println("bla ", rand.Intn(9))
+	//fmt.Println(addTry([]int{rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9)}))
+	//pointerTry()
+	runtimeTry()
 }

@@ -20,7 +20,7 @@ func (l Location) String() string {
 	return fmt.Sprint(l.Loc)
 }
 
-func main() {
+func main4() {
 	resp, err := http.Get("https://www.washingtonpost.com/news-politics-sitemap.xml")
 	if err != nil {
 		log.Fatal(err)
@@ -33,4 +33,5 @@ func main() {
 	xml.Unmarshal(bodyBytes, &n)
 
 	fmt.Println(n.Locations)
+
 }
