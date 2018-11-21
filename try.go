@@ -42,10 +42,32 @@ func runtimeTry() {
 	fmt.Println(runtime.Compiler)
 }
 
+func multiSliceTry() [][]string {
+	board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+	board[0][0] = "X"
+	board[2][2] = "O"
+	board[1][2] = "X"
+	board[1][0] = "O"
+	board[0][2] = "X"
+	return board
+}
+func rangeTry() {
+	num := []int{1, 2, 3, 4}
+	for i, j := range num {
+		fmt.Println(i, j)
+	}
+}
+
 func main() {
 	//rand.Seed(time.Now().UTC().UnixNano())
 	//fmt.Println("bla ", rand.Intn(9))
 	//fmt.Println(addTry([]int{rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9), rand.Intn(9)}))
 	//pointerTry()
-	runtimeTry()
+	//runtimeTry()
+	//fmt.Println(multiSliceTry())
+	rangeTry()
 }
