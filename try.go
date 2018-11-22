@@ -62,6 +62,19 @@ func rangeTry() {
 	}
 }
 
+func mapTry() {
+	m := make(map[int]string)
+	m[0] = "a"
+	m[1] = "b"
+	fmt.Println(m)
+
+	n := map[string]int{"a": 1, "b": 2}
+	fmt.Println(n)
+
+	elem, ok := m[1]
+	fmt.Println(elem, ok)
+}
+
 func main() {
 	//rand.Seed(time.Now().UTC().UnixNano())
 	//fmt.Println("bla ", rand.Intn(9))
@@ -69,5 +82,6 @@ func main() {
 	//pointerTry()
 	//runtimeTry()
 	//fmt.Println(multiSliceTry())
-	rangeTry()
+	//rangeTry()
+	mapTry()
 }
